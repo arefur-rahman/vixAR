@@ -90,38 +90,25 @@ export function constructMetadata(config: SiteConfig): Metadata {
 
         icons: {
             icon: [
-                { url: "/favicon.ico", sizes: "any" },
+                { url: "/faviconLight.webp", type: "image/webp" },
                 {
-                    url: "/favicon-32x32.png",
-                    sizes: "32x32",
-                    type: "image/png",
-                },
-                {
-                    url: "/android-chrome-192x192.png",
-                    sizes: "192x192",
-                    type: "image/png",
-                },
-                {
-                    url: "/vixARLight.webp",
-                    sizes: "500x500",
-                    type: "image/png",
+                    url: "/faviconLight.webp",
+                    type: "image/webp",
                     media: "(prefers-color-scheme: light)",
                 },
                 {
-                    url: "/vixARDark.webp",
-                    sizes: "500x500",
-                    type: "image/png",
+                    url: "/faviconDark.webp",
+                    type: "image/webp",
                     media: "(prefers-color-scheme: dark)",
                 },
             ],
             apple: [
                 {
-                    url: "/apple-touch-icon.png",
-                    sizes: "180x180",
-                    type: "image/png",
+                    url: "/faviconLight.webp",
+                    type: "image/webp",
                 },
             ],
-            shortcut: "/favicon.ico",
+            shortcut: "/faviconLight.webp",
         },
 
         alternates: {
