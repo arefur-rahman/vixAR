@@ -4,25 +4,31 @@ import {
     SiteConfig,
 } from "@/lib/metadata";
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Roboto, Playfair_Display, Fira_Code } from "next/font/google";
+import { ThemeProvider } from "@/components/ThemeProvider";
 import "./globals.css";
 
-const geistSans = Geist({
-    variable: "--font-geist-sans",
+const fontSans = Roboto({
     subsets: ["latin"],
+    variable: "--font-sans",
 });
 
-const geistMono = Geist_Mono({
-    variable: "--font-geist-mono",
+const fontSerif = Playfair_Display({
     subsets: ["latin"],
+    variable: "--font-serif",
+});
+
+const fontMono = Fira_Code({
+    subsets: ["latin"],
+    variable: "--font-mono",
 });
 
 export const siteConfig: SiteConfig = {
     baseUrl: "https://site_url.com",
-    siteName: "Site Name",
-    title: "Site Name",
-    description: "Site description",
-    ogImage: "/brand_logo_xl.png",
+    siteName: "vixAR",
+    title: "vixAR",
+    description: "vixAR",
+    ogImage: "/vixARLight.webp",
     twitterHandle: "@brandname",
     authorName: "Arefur Rahman Khan",
     portfolioUrl: "http://arefolio.vercel.app/",
@@ -42,9 +48,19 @@ export default function RootLayout({
     return (
         <html
             lang="en"
-            className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+            className={`${fontSans.variable} ${fontSerif.variable} ${fontMono.variable}  h-full antialiased`}
+            suppressHydrationWarning
         >
-            <body className="min-h-full flex flex-col">{children}</body>
+            <body className="min-h-full flex flex-col">
+                <ThemeProvider
+                    attribute="class"
+                    defaultTheme="dark"
+                    enableSystem
+                    disableTransitionOnChange
+                >
+                    {children}
+                </ThemeProvider>
+            </body>
         </html>
     );
 }

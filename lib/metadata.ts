@@ -28,7 +28,7 @@ export function constructMetadata(config: SiteConfig): Metadata {
         siteName,
         title,
         description,
-        ogImage = "/brand_logo_xl.png",
+        ogImage = "/vixARLight.webp",
         twitterHandle = "@brandName",
         authorName = "MD. Arefur Rahman Khan",
         portfolioUrl = "http://arefolio.vercel.app/",
@@ -89,9 +89,39 @@ export function constructMetadata(config: SiteConfig): Metadata {
         },
 
         icons: {
-            icon: [{ url: "/icon.ico", sizes: "any" }],
-            apple: [{ url: "/icon.ico" }],
-            shortcut: "/icon.ico",
+            icon: [
+                { url: "/favicon.ico", sizes: "any" },
+                {
+                    url: "/favicon-32x32.png",
+                    sizes: "32x32",
+                    type: "image/png",
+                },
+                {
+                    url: "/android-chrome-192x192.png",
+                    sizes: "192x192",
+                    type: "image/png",
+                },
+                {
+                    url: "/vixARLight.webp",
+                    sizes: "500x500",
+                    type: "image/png",
+                    media: "(prefers-color-scheme: light)",
+                },
+                {
+                    url: "/vixARDark.webp",
+                    sizes: "500x500",
+                    type: "image/png",
+                    media: "(prefers-color-scheme: dark)",
+                },
+            ],
+            apple: [
+                {
+                    url: "/apple-touch-icon.png",
+                    sizes: "180x180",
+                    type: "image/png",
+                },
+            ],
+            shortcut: "/favicon.ico",
         },
 
         alternates: {
